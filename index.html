@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="ru" class="html-hidden">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    <style>
+      html.html-hidden {
+        width: 100%;
+        overflow: hidden
+      }
+
+      .preload {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: url("img/loading.svg") no-repeat center center #fff;
+        background-size: 200px 200px;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center
+      }
+
+      .html-hidden body {
+        overflow: hidden
+      }
+    </style>
+    <script>
+      let externalVar = {
+        nonce: "sadfsdf",
+        ajaxUrl: "",
+        baseUrl: "",
+      };
+    </script>
+    <style>
+      :root{--f-spinner-width:36px;--f-spinner-height:36px;--f-spinner-color-1:rgba(0,0,0,.1);--f-spinner-color-2:rgba(17,24,28,.8);--f-spinner-stroke:2.75}:root{--f-button-width:40px;--f-button-height:40px;--f-button-border:0;--f-button-border-radius:0;--f-button-color:#374151;--f-button-bg:#f8f8f8;--f-button-hover-bg:#e0e0e0;--f-button-active-bg:#d0d0d0;--f-button-shadow:none;--f-button-transform:none;--f-button-svg-width:20px;--f-button-svg-height:20px;--f-button-svg-stroke-width:1.5;--f-button-svg-fill:none;--f-button-svg-filter:none;--f-button-svg-disabled-opacity:0.65}*,:after,:before{border:0 solid;box-sizing:border-box}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:Inter,ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}h1,h3{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}strong{font-weight:bolder}button,input{color:inherit;font-family:inherit;font-feature-settings:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;line-height:inherit;margin:0;padding:0}button{text-transform:none}[type=button],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}h1,h3,p{margin:0}input::-moz-placeholder{color:#9ca3af}img,svg{display:block;vertical-align:middle}img{height:auto;max-width:100%}@font-face{font-display:swap;font-family:Inter;font-style:normal;font-weight:800;src:url(font/Inter-ExtraBold.woff2) format("woff2")}@font-face{font-display:swap;font-family:Inter;font-style:normal;font-weight:700;src:url(font/Inter-Bold.woff2) format("woff2")}@font-face{font-display:swap;font-family:Inter;font-style:normal;font-weight:400;src:url(font/Inter-Regular.woff2) format("woff2")}@font-face{font-display:swap;font-family:Inter;font-style:normal;font-weight:500;src:url(font/Inter-Medium.woff2) format("woff2")}@font-face{font-display:swap;font-family:Inter;font-style:normal;font-weight:300;src:url(font/Inter-Light.woff2) format("woff2")}:root{--textColor:#000;--headerHeight:125px;--headerMinHeight:90px}*{outline:0!important}input::-webkit-input-placeholder{color:#1e79a0;opacity:1}input::-moz-placeholder{color:#1e79a0;opacity:1}input:-ms-input-placeholder{color:#1e79a0;opacity:1}.placeholder-black input{color:#404040!important}.placeholder-black input::-webkit-input-placeholder{color:#404040}.placeholder-black input::-moz-placeholder{color:#404040}.placeholder-black input:-ms-input-placeholder{color:#404040}img{display:block}:root{scroll-behavior:auto}body{color:#404040;font-size:1.25rem;font-weight:500;min-height:100vh;overflow-x:hidden;overflow-y:auto;position:relative;visibility:visible}:root::-webkit-scrollbar{width:.5rem}:root::-webkit-scrollbar-track{background:#f1f1f1}:root::-webkit-scrollbar-thumb{background:#36b2e8}:root::-webkit-scrollbar-thumb:hover{background:#1e79a0}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scroll-snap-strictness:proximity;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000}::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scroll-snap-strictness:proximity;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000}.prose{color:var(--tw-prose-body);max-width:65ch}.prose{--tw-prose-body:#374151;--tw-prose-headings:#111827;--tw-prose-lead:#4b5563;--tw-prose-links:#111827;--tw-prose-bold:#111827;--tw-prose-counters:#6b7280;--tw-prose-bullets:#d1d5db;--tw-prose-hr:#e5e7eb;--tw-prose-quotes:#111827;--tw-prose-quote-borders:#e5e7eb;--tw-prose-captions:#6b7280;--tw-prose-kbd:#111827;--tw-prose-kbd-shadows:17 24 39;--tw-prose-code:#111827;--tw-prose-pre-code:#e5e7eb;--tw-prose-pre-bg:#1f2937;--tw-prose-th-borders:#d1d5db;--tw-prose-td-borders:#e5e7eb;--tw-prose-invert-body:#d1d5db;--tw-prose-invert-headings:#fff;--tw-prose-invert-lead:#9ca3af;--tw-prose-invert-links:#fff;--tw-prose-invert-bold:#fff;--tw-prose-invert-counters:#9ca3af;--tw-prose-invert-bullets:#4b5563;--tw-prose-invert-hr:#374151;--tw-prose-invert-quotes:#f3f4f6;--tw-prose-invert-quote-borders:#374151;--tw-prose-invert-captions:#9ca3af;--tw-prose-invert-kbd:#fff;--tw-prose-invert-kbd-shadows:255 255 255;--tw-prose-invert-code:#fff;--tw-prose-invert-pre-code:#d1d5db;--tw-prose-invert-pre-bg:rgba(0,0,0,.5);--tw-prose-invert-th-borders:#4b5563;--tw-prose-invert-td-borders:#374151;font-size:1rem;line-height:1.75}.prose-2xl{font-size:1.5rem;line-height:1.6666667}.container{margin-left:auto;margin-right:auto;padding-left:.625rem;padding-right:.625rem;width:100%}.button{align-items:center;background:#36b2e8;border-radius:.5rem;color:#fff;display:flex;font-size:1.5rem;font-weight:500;justify-content:center;max-width:100%;min-height:4.5rem;padding:.25rem .5rem;text-align:center;text-transform:uppercase;transform:skew(-12deg)}.button_white{background:#fff;color:#36b2e8}@media (max-width:1399px){.button{font-size:1.25rem;min-height:4rem}}@media (max-width:991px){.button{font-size:1rem;min-height:3.5rem}}.layout{display:grid;grid-template-areas:"header" "main" "footer";grid-template-columns:minmax(0,1fr);grid-template-rows:var(--headerHeight) 1fr minmax(0,max-content);min-height:100dvh}.main{grid-area:main;-ms-grid-column:1;-ms-grid-row:2}.section{--sectionIndent:3.75rem;--beforeContentIndent:2.25rem;padding-bottom:var(--sectionIndent);padding-top:var(--sectionIndent);position:relative}.section>*{position:relative;z-index:2}@media (max-width:767px){.section{--sectionIndent:2.5rem}}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.left-0{left:0}.right-0{right:0}.top-0{top:0}.z-10{z-index:10}.z-50{z-index:50}.z-\[49\]{z-index:49}.col-span-1{grid-column:span 1/span 1}.col-span-4{grid-column:span 4/span 4}.col-span-6{grid-column:span 6/span 6}.col-span-7{grid-column:span 7/span 7}.mx-auto{margin-left:auto;margin-right:auto}.-mr-\[calc\(theme\(gap\.column\)\/2\)\]{margin-right:-.625rem}.mb-10{margin-bottom:2.5rem}.mb-5{margin-bottom:1.25rem}.block{display:block}.flex{display:flex}.grid{display:grid}.\!hidden{display:none!important}.hidden{display:none}.h-\[--headerHeight\]{height:var(--headerHeight)}.h-\[calc\(4\.5rem_-_8px\)\]{height:calc(4.5rem - 8px)}.h-auto{height:auto}.h-full{height:100%}.max-h-dvh{max-height:100dvh}.min-h-\[calc\(100svh-var\(--headerHeight\)-10px\)\]{min-height:calc(100svh - var(--headerHeight) - 10px)}.min-h-dvh{min-height:100dvh}.w-\[26\.25rem\]{width:26.25rem}.w-\[26\.8rem\]{width:26.8rem}.w-\[91\%\]{width:91%}.w-full{width:100%}.max-w-\[460px\]{max-width:460px}.max-w-full{max-width:100%}.shrink-0{flex-shrink:0}.translate-y-3{--tw-translate-y:0.75rem}.-skew-x-12,.translate-y-3{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-skew-x-12{--tw-skew-x:-12deg}.skew-x-12{--tw-skew-x:12deg}.skew-x-12{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-9{gap:2.25rem}.gap-column{gap:1.25rem}.gap-x-4{-moz-column-gap:1rem;column-gap:1rem}.gap-x-6{-moz-column-gap:1.5rem;column-gap:1.5rem}.gap-x-column{-moz-column-gap:1.25rem;column-gap:1.25rem}.gap-y-2{row-gap:.5rem}.self-center{align-self:center}.overflow-auto{overflow:auto}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border-4{border-width:4px}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255/var(--tw-border-opacity))}.bg-\[\#D9D9D9\]{--tw-bg-opacity:1;background-color:rgb(217 217 217/var(--tw-bg-opacity))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(54 178 232/var(--tw-bg-opacity))}.bg-transparent{background-color:transparent}.bg-white\/70{background-color:hsla(0,0%,100%,.7)}.bg-white\/\[0\.9\]{background-color:hsla(0,0%,100%,.9)}.object-cover{-o-object-fit:cover;object-fit:cover}.p-5{padding:1.25rem}.px-12{padding-left:3rem;padding-right:3rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-\[clamp\(1\.5rem\2c 3\.6rem\2c 9\.35\%\)\]{padding-left:clamp(1.5rem,3.6rem,9.35%);padding-right:clamp(1.5rem,3.6rem,9.35%)}.py-1{padding-bottom:.25rem;padding-top:.25rem}.py-16{padding-bottom:4rem;padding-top:4rem}.py-4{padding-bottom:1rem;padding-top:1rem}.py-8{padding-bottom:2rem;padding-top:2rem}.text-center{text-align:center}.text-\[0\.75rem\]{font-size:.75rem}.text-\[1\.125rem\]{font-size:1.125rem}.text-\[5\.375rem\]{font-size:5.375rem}.text-lg{font-size:2rem;line-height:1.2}.text-md{font-size:1.5rem;line-height:1}.text-sm{font-size:1rem;line-height:1.5}.text-xl{font-size:3rem;line-height:1.2}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-normal{font-weight:400}.uppercase{text-transform:uppercase}.leading-tight{line-height:1.25}.text-primary{--tw-text-opacity:1;color:rgb(54 178 232/var(--tw-text-opacity))}.text-primary-dark{--tw-text-opacity:1;color:rgb(30 121 160/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.placeholder-black::-moz-placeholder{--tw-placeholder-opacity:1;color:rgb(30 30 30/var(--tw-placeholder-opacity))}.opacity-0{opacity:0}.drop-shadow-\[0px_20px_40px_rgba\(0\2c 0\2c 0\2c 0\.25\)\]{--tw-drop-shadow:drop-shadow(0px 20px 40px rgba(0,0,0,.25))}.drop-shadow-\[0px_20px_40px_rgba\(0\2c 0\2c 0\2c 0\.25\)\],.drop-shadow-main{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-main{--tw-drop-shadow:drop-shadow(0px 20px 20px rgba(0,0,0,.25))}.hamburger{background-color:transparent;border:0;color:inherit;display:inline-block;font:inherit;margin:0;overflow:visible;padding:0;text-transform:none}.hamburger-box{display:inline-block;height:21px;position:relative;width:36px}.hamburger-inner{display:block;margin-top:-1.5px;top:50%}.hamburger-inner,.hamburger-inner:after,.hamburger-inner:before{background-color:#36b2e8;border-radius:4px;height:3px;position:absolute;width:36px}.hamburger-inner:after,.hamburger-inner:before{content:"";display:block}.hamburger-inner:before{top:-9px}.hamburger-inner:after{bottom:-9px}.hamburger--collapse .hamburger-inner{bottom:0;top:auto}.hamburger--collapse .hamburger-inner:after{top:-18px}:root{--swiper-theme-color:#007aff}:host{display:block;margin-left:auto;margin-right:auto;position:relative;z-index:1}@media (max-width:1199px){:root{--textColor:#000;--headerHeight:80px;--headerMinHeight:80px}}.icon{font-size:10px}.icon-fb,.icon-inst,.icon-yt{height:2.2em;width:2.2em}.icon-prev-arrow{height:3.2em;width:1.6em}.modal__main{grid-area:main;-ms-grid-column:1;-ms-grid-row:2}.header{grid-area:header;-ms-grid-row:1}.header{-ms-grid-column:1}.footer{grid-area:footer;-ms-grid-row:3}.main-screen__image{-webkit-mask-image:url(img/main-mask.svg#main-mask);mask-image:url(img/main-mask.svg#main-mask);-webkit-mask-size:100% 100%;mask-size:100% 100%}.main-screen__title{margin-bottom:clamp(3rem,15.8vh,9.375rem)}@media (max-width:1399px){.main-screen__title{margin-bottom:clamp(1rem,6vh,5rem)}}@media (max-width:1199px){.main-screen__image{-webkit-mask-image:none;mask-image:none}.main-screen__title{margin-bottom:3rem}}@media (max-width:991px){.main-screen__title{margin-bottom:2rem}}.process-carousel-button,.review-carousel-button{align-items:center;display:flex;height:2.5rem;justify-content:center;left:0;position:absolute;top:50%;transform:translateY(-50%);width:2.5rem;z-index:50}.process-carousel-button:after,.review-carousel-button:after{display:none}.process-carousel-button_next,.review-carousel-button_next{left:auto;right:0}.process-carousel-button_next>.icon,.review-carousel-button_next>.icon{transform:rotate(180deg)}@media (max-width:1199px){.process-carousel-button,.review-carousel-button{height:auto;width:auto}}@media (max-width:575px){.process-carousel-button,.review-carousel-button{display:none;height:auto;width:auto}}@media (max-width:991px){.lg\:order-1{order:1}}@media (max-width:1399px){.\32xl\:h-\[calc\(4rem_-_8px\)\]{height:calc(4rem - 8px)}.\32xl\:text-sm{font-size:1rem;line-height:1.5}.\32xl\:text-xl{font-size:3rem;line-height:1.2}}@media (max-width:1199px){.xl\:col-span-3{grid-column:span 3/span 3}.xl\:col-span-9{grid-column:span 9/span 9}.xl\:\!flex{display:flex!important}.xl\:hidden{display:none}.xl\:min-h-\[480px\]{min-height:480px}.xl\:w-\[100\%\]{width:100%}.xl\:justify-end{justify-content:flex-end}.xl\:gap-y-1{row-gap:.25rem}.xl\:py-2{padding-bottom:.5rem;padding-top:.5rem}.xl\:text-\[0\.85rem\]{font-size:.85rem}.xl\:drop-shadow-none{--tw-drop-shadow:drop-shadow(0 0 #0000);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}}@media (max-width:991px){.lg\:order-1{order:1}.lg\:col-span-12{grid-column:span 12/span 12}.lg\:mx-auto{margin-left:auto;margin-right:auto}.lg\:hidden{display:none}.lg\:h-\[calc\(3\.5rem_-_8px\)\]{height:calc(3.5rem - 8px)}.lg\:min-h-\[400px\]{min-height:400px}.lg\:w-\[20rem\]{width:20rem}.lg\:px-4{padding-left:1rem;padding-right:1rem}.lg\:text-\[2\.5rem\]{font-size:2.5rem}.lg\:text-base{font-size:1.25rem;line-height:1.5}}@media (max-width:767px){.md\:mb-7{margin-bottom:1.75rem}.md\:text-\[2rem\]{font-size:2rem}}@media (max-width:575px){.sm\:gap-x-3{-moz-column-gap:.75rem;column-gap:.75rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:py-12{padding-bottom:3rem;padding-top:3rem}.sm\:text-\[2\.5rem\]{font-size:2.5rem}.sm\:text-md{font-size:1.5rem;line-height:1}}
+    </style>
+    <link href="./css/style.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="./css/style.css" rel="stylesheet"></noscript>
+    <script>!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var t,o=loadCSS.relpreload={};o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},o.support()||(o.poly(),t=n.setInterval(o.poly,500),n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})),"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
+  </head>
+
+  <body>
+    <div class="preload"></div>
+  </body>
+
+</html>
+<div class="layout">
+  <header class="header group fixed left-0 top-0 z-50 flex h-[--headerHeight] w-full items-center bg-white/70 py-4 transition-[height] duration-500 xl:py-2 [&.header\_min]:h-[--headerMinHeight] [&.header\_min]:shadow-md">
+    <div class="container grid grid-cols-12 items-center gap-column">
+      <a href="#" class="block logo col-span-1 -mr-[calc(theme(gap.column)/2)] xl:col-span-3">
+        <img src="img/logo.png" alt="turbocar">
+      </a>
+      <nav class="nav flex items-center justify-center col-span-7 gap-x-6 xl:hidden">
+        <a href="#about" class="nav__item text-sm font-normal transition-[color] duration-500 hover:text-primary">Про нас</a>
+        <a href="#services" class="nav__item text-sm font-normal transition-[color] duration-500 hover:text-primary">Послуги</a>
+        <a href="#check" class="nav__item text-sm font-normal transition-[color] duration-500 hover:text-primary">Що перевіряємо</a>
+        <a href="#review" class="nav__item text-sm font-normal transition-[color] duration-500 hover:text-primary">Відгуки</a>
+        <a href="#faq" class="nav__item text-sm font-normal transition-[color] duration-500 hover:text-primary">FAQ</a>
+      </nav>
+      <div class="col-span-4 flex items-center justify-between gap-x-column xl:col-span-9 xl:justify-end sm:gap-x-3">
+        <div class="flex flex-col gap-y-2 xl:gap-y-1">
+          <a href="tel:+380999999999" class="text-[1.125rem] text-primary font-bold 2xl:text-sm xl:text-[0.85rem]">+380 (99) 999 99 99</a>
+          <a href="mailto:turbocar@gmail.com" class="text-[0.75rem]">turbocar@gmail.com</a>
+        </div> <a href="#" class="hover:bg-primary flex items-center justify-center self-center rounded-md bg-[#D9D9D9] px-2 py-1 text-center text-sm transition-colors duration-500">En</a>
+        <div class="flex gap-x-4 xl:hidden">
+          <a href="#" target="_blank" class="block transition-transform duration-500 hover:scale-110">
+            <svg class="icon icon-inst xl:hidden">
+              <use xlink:href="#inst">
+              </use>
+            </svg>
+          </a>
+          <a href="#" target="_blank" class="block transition-transform duration-500 hover:scale-110">
+            <svg class="icon icon-yt xl:hidden">
+              <use xlink:href="#yt">
+              </use>
+            </svg>
+          </a>
+          <a href="#" target="_blank" class="block transition-transform duration-500 hover:scale-110">
+            <svg class="icon icon-fb xl:hidden">
+              <use xlink:href="#fb">
+              </use>
+            </svg>
+          </a>
+        </div>
+        <button class="hamburger hamburger--collapse z-50 !hidden xl:!flex" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu-layout transit group invisible fixed left-0 top-0 z-[49] max-h-dvh w-full overflow-auto bg-white/[0.9] opacity-0 duration-500 [&.mobile-menu-layout\_active]:visible [&.mobile-menu-layout\_active]:opacity-100">
+      <div class="mobile-menu flex min-h-dvh flex-col items-center justify-center p-5">
+        <a href="#about" class="mobile-menu-item mb-5 translate-y-3 text-center text-lg font-medium uppercase opacity-0 transition-all delay-[0.3s] duration-700 group-[&.mobile-menu-layout\_active]:transform-none group-[&.mobile-menu-layout\_active]:opacity-100 sm:text-md">Про нас</a>
+        <a href="#services" class="mobile-menu-item mb-5 translate-y-3 text-center text-lg font-medium uppercase opacity-0 transition-all delay-[0.3s] duration-700 group-[&.mobile-menu-layout\_active]:transform-none group-[&.mobile-menu-layout\_active]:opacity-100 sm:text-md">Послуги</a>
+        <a href="#check" class="mobile-menu-item mb-5 translate-y-3 text-center text-lg font-medium uppercase opacity-0 transition-all delay-[0.3s] duration-700 group-[&.mobile-menu-layout\_active]:transform-none group-[&.mobile-menu-layout\_active]:opacity-100 sm:text-md">Що перевіряємо</a>
+        <a href="#review" class="mobile-menu-item mb-5 translate-y-3 text-center text-lg font-medium uppercase opacity-0 transition-all delay-[0.3s] duration-700 group-[&.mobile-menu-layout\_active]:transform-none group-[&.mobile-menu-layout\_active]:opacity-100 sm:text-md">Відгуки</a>
+        <a href="#faq" class="mobile-menu-item mb-5 translate-y-3 text-center text-lg font-medium uppercase opacity-0 transition-all delay-[0.3s] duration-700 group-[&.mobile-menu-layout\_active]:transform-none group-[&.mobile-menu-layout\_active]:opacity-100 sm:text-md">FAQ</a>
+        <div class="translate-y-3 opacity-0 transition-all delay-[0.3s] duration-700 group-[&.mobile-menu-layout\_active]:transform-none group-[&.mobile-menu-layout\_active]:opacity-100">
+          <div class="flex gap-x-4">
+            <a href="#" target="_blank" class="block transition-transform duration-500 hover:scale-110">
+              <svg class="icon icon-inst">
+                <use xlink:href="#inst">
+                </use>
+              </svg>
+            </a>
+            <a href="#" target="_blank" class="block transition-transform duration-500 hover:scale-110">
+              <svg class="icon icon-yt">
+                <use xlink:href="#yt">
+                </use>
+              </svg>
+            </a>
+            <a href="#" target="_blank" class="block transition-transform duration-500 hover:scale-110">
+              <svg class="icon icon-fb">
+                <use xlink:href="#fb">
+                </use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="main">
+    <div class="main-screen relative flex min-h-[calc(100svh-var(--headerHeight)-10px)] items-center justify-center py-8 drop-shadow-[0px_20px_40px_rgba(0,0,0,0.25)] xl:min-h-[480px] xl:drop-shadow-none lg:min-h-[400px]">
+      <img src="img/main.jpg" alt="turbocar" class="main-screen__image absolute right-0 top-0 h-full w-[91%] object-cover xl:w-[100%]">
+      <div class="container relative z-10">
+        <h1 class="main-screen__title 2xl: main-screen__title text-center text-[5.375rem] font-bold leading-tight text-white 2xl:text-xl sm:text-[2.5rem]">
+          Автовідбір
+        </h1>
+        <a href="#modal-form" data-fancybox-form="" class="button mx-auto w-[26.8rem] lg:w-[20rem] main-screen__button">
+          <span class="skew-x-12">Отримати консультацію</span>
+        </a>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container" id="about">
+        <h3 class="sm:text-md md:text-[2rem] md:mb-7 lg:text-[2.5rem] mb-10 font-bold text-xl">Чому Ми?</h3>
+        <div class="flex gap-y-7 flex-wrap -mx-[calc(theme(gap.column)/2)] items-center">
+          <div class="pr-[calc(theme(gap.column)/2)] pl-[calc(theme(gap.column)/2)] basis-1/4 lg:basis-1/2 md:basis-full">
+            <div class="flex grow flex-col items-center justify-center rounded-3xl shadow-[0px_20px_40px_0px_rgba(0,0,0,0.16)] px-3 py-6">
+              <p class="text-center text-lg font-extrabold text-primary mb-3">8</p>
+              <p class="lg:text-base text-center text-md">Років досвіду</p>
+            </div>
+          </div>
+          <div class="pr-[calc(theme(gap.column)/2)] pl-[calc(theme(gap.column)/2)] basis-1/4 lg:basis-1/2 md:basis-full">
+            <div class="flex grow flex-col items-center justify-center rounded-3xl shadow-[0px_20px_40px_0px_rgba(0,0,0,0.16)] px-3 py-6">
+              <p class="text-center text-lg font-extrabold text-primary mb-3">5840</p>
+              <p class="lg:text-base text-center text-md">Перевіренних авто</p>
+            </div>
+          </div>
+          <div class="pr-[calc(theme(gap.column)/2)] pl-[calc(theme(gap.column)/2)] lg:basis-1/2 md:basis-full basis-2/4">
+            <div class="flex grow flex-col items-center justify-center rounded-3xl">
+              <p class="lg:text-sm md:text-wrap text-balance">Lorem ipsum dolor sit amet consectetur. Mattis massa curabitur id viverra massa vitae est. <br>
+                Consectetur rhoncus eu adipiscing et molestie tortor tellus scelerisque ut.</p>
+            </div>
+          </div>
+          <div class="pr-[calc(theme(gap.column)/2)] pl-[calc(theme(gap.column)/2)] lg:basis-1/2 md:basis-full basis-2/4">
+            <div class="flex grow flex-col items-center justify-center rounded-3xl">
+              <p class="lg:text-sm md:text-wrap text-balance">Lorem ipsum dolor sit amet consectetur. Mattis massa curabitur id viverra massa vitae est. <br>
+                Consectetur rhoncus eu adipiscing et molestie tortor tellus scelerisque ut.</p>
+            </div>
+          </div>
+          <div class="pr-[calc(theme(gap.column)/2)] pl-[calc(theme(gap.column)/2)] basis-1/4 lg:basis-1/2 md:basis-full">
+            <div class="flex grow flex-col items-center justify-center rounded-3xl shadow-[0px_20px_40px_0px_rgba(0,0,0,0.16)] px-3 py-6">
+              <p class="text-center text-lg font-extrabold text-primary mb-3">1168</p>
+              <p class="lg:text-base text-center text-md">Задоволених водіїв</p>
+            </div>
+          </div>
+          <div class="pr-[calc(theme(gap.column)/2)] pl-[calc(theme(gap.column)/2)] basis-1/4 lg:basis-1/2 md:basis-full">
+            <div class="flex grow flex-col items-center justify-center rounded-3xl shadow-[0px_20px_40px_0px_rgba(0,0,0,0.16)] px-3 py-6">
+              <p class="text-center text-lg font-extrabold text-primary mb-3">584 000$</p>
+              <p class="lg:text-base text-center text-md">Lorem ipsum dolor</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section_fill section_fill-primary">
+      <div class="container" id="services">
+        <h3 class="sm:text-md md:text-[2rem] md:mb-7 lg:text-[2.5rem] mb-10 font-bold text-xl text-white">Послуги</h3>
+        <div class="services-list row gap-y-column justify-center">
+          <div class="col-3 xl:col-4 lg:col-6 sm:col-12">
+            <div class="services-list-item shadow-main 2xl:px-5 group flex min-h-[420px] flex-col rounded-2xl px-10 py-6 max-w-[280px] mx-auto" style="background:linear-gradient(rgba(255,255,255,.95) 100%,rgba(255,255,255,.95) 100%),url(&quot;img/service.jpg&quot;) center/cover no-repeat">
+              <div class="flex grow flex-col justify-center">
+                <p class="text-center text-lg font-bold md:text-md">Service name</p>
+                <div class="flex items-center justify-center overflow-clip text-sm transition-['height'] duration-500 group-[.is-active]:grow">
+                  <p class="services-list-item__desc relative h-0 overflow-clip text-balance pl-5 after:absolute after:left-0 after:top-1 after:block after:h-4 after:w-4 after:-skew-x-6 after:rounded-sm after:bg-primary">
+                    United healthcare children&#x60;s foundation anti-cruelty society
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-col items-center">
+                <p class="mb-2 text-sm font-semibold">Від 4000грн</p>
+
+                <a href="#modal-form" data-fancybox-form="" class="button-compact flex justify-center items-center bg-primary text-center py-3 px-7 rounded-lg font-medium text-white w-full shadow-main max-w-[280px] mx-auto">Learn more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-3 xl:col-4 lg:col-6 sm:col-12">
+            <div class="services-list-item shadow-main 2xl:px-5 group flex min-h-[420px] flex-col rounded-2xl px-10 py-6 max-w-[280px] mx-auto" style="background:linear-gradient(rgba(255,255,255,.95) 100%,rgba(255,255,255,.95) 100%),url(&quot;img/service.jpg&quot;) center/cover no-repeat">
+              <div class="flex grow flex-col justify-center">
+                <p class="text-center text-lg font-bold md:text-md">Service name</p>
+                <div class="flex items-center justify-center overflow-clip text-sm transition-['height'] duration-500 group-[.is-active]:grow">
+                  <p class="services-list-item__desc relative h-0 overflow-clip text-balance pl-5 after:absolute after:left-0 after:top-1 after:block after:h-4 after:w-4 after:-skew-x-6 after:rounded-sm after:bg-primary">
+                    United healthcare children&#x60;s foundation anti-cruelty society
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-col items-center">
+                <p class="mb-2 text-sm font-semibold">Від 4000грн</p>
+
+                <a href="#modal-form" data-fancybox-form="" class="button-compact flex justify-center items-center bg-primary text-center py-3 px-7 rounded-lg font-medium text-white w-full shadow-main max-w-[280px] mx-auto">Learn more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-3 xl:col-4 lg:col-6 sm:col-12">
+            <div class="services-list-item shadow-main 2xl:px-5 group flex min-h-[420px] flex-col rounded-2xl px-10 py-6 max-w-[280px] mx-auto" style="background:linear-gradient(rgba(255,255,255,.95) 100%,rgba(255,255,255,.95) 100%),url(&quot;img/service.jpg&quot;) center/cover no-repeat">
+              <div class="flex grow flex-col justify-center">
+                <p class="text-center text-lg font-bold md:text-md">Service name</p>
+                <div class="flex items-center justify-center overflow-clip text-sm transition-['height'] duration-500 group-[.is-active]:grow">
+                  <p class="services-list-item__desc relative h-0 overflow-clip text-balance pl-5 after:absolute after:left-0 after:top-1 after:block after:h-4 after:w-4 after:-skew-x-6 after:rounded-sm after:bg-primary">
+                    United healthcare children&#x60;s foundation anti-cruelty society
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-col items-center">
+                <p class="mb-2 text-sm font-semibold">Від 4000грн</p>
+
+                <a href="#modal-form" data-fancybox-form="" class="button-compact flex justify-center items-center bg-primary text-center py-3 px-7 rounded-lg font-medium text-white w-full shadow-main max-w-[280px] mx-auto">Learn more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-3 xl:col-4 lg:col-6 sm:col-12">
+            <div class="services-list-item shadow-main 2xl:px-5 group flex min-h-[420px] flex-col rounded-2xl px-10 py-6 max-w-[280px] mx-auto" style="background:linear-gradient(rgba(255,255,255,.95) 100%,rgba(255,255,255,.95) 100%),url(&quot;img/service.jpg&quot;) center/cover no-repeat">
+              <div class="flex grow flex-col justify-center">
+                <p class="text-center text-lg font-bold md:text-md">Service name</p>
+                <div class="flex items-center justify-center overflow-clip text-sm transition-['height'] duration-500 group-[.is-active]:grow">
+                  <p class="services-list-item__desc relative h-0 overflow-clip text-balance pl-5 after:absolute after:left-0 after:top-1 after:block after:h-4 after:w-4 after:-skew-x-6 after:rounded-sm after:bg-primary">
+                    United healthcare children&#x60;s foundation anti-cruelty society
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-col items-center">
+                <p class="mb-2 text-sm font-semibold">Від 4000грн</p>
+
+                <a href="#modal-form" data-fancybox-form="" class="button-compact flex justify-center items-center bg-primary text-center py-3 px-7 rounded-lg font-medium text-white w-full shadow-main max-w-[280px] mx-auto">Learn more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-[calc(-1*(var(--sectionIndent)*2+var(--beforeContentIndent)*2))] mt-44 grid grid-cols-12 items-center gap-column 2xl:mb-[calc(-1*(var(--sectionIndent)*1.5+var(--beforeContentIndent)*1.5))] 2xl:mt-24 lg:mb-0">
+          <div class="col-span-5 col-start-2 py-[var(--sectionIndent)] xl:col-span-6 xl:col-start-1 lg:col-span-12 lg:py-0">
+            <h3 class="pb-10 text-xl font-bold text-white 2xl:text-lg sm:text-md">
+              Lorem ipsum dolor sit amet consectetur. In ac viverra gravida.
+            </h3>
+            <div class="prose prose-xl md:prose-lg mb-14 prose-white">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Mattis massa curabitur id
+                viverra massa vitae est. Consectetur rhoncus eu adipiscing et molestie
+                tortor tellus scelerisque ut.
+              </p>
+            </div>
+            <a href="#modal-form" data-fancybox-form="" class="button shadow-main w-[26.8rem] lg:mx-auto button_white">
+              <span class="skew-x-12">Залишити заявку</span>
+            </a>
+          </div>
+          <div class="col-span-6 lg:col-span-12 lg:mt-14">
+            <img class="ml-auto h-auto max-w-full drop-shadow-main lg:mr-auto" src="img/service-1.png" loading="lazy" alt="turbocar" width="581" height="901">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container" id="check">
+        <h3 class="sm:text-md md:text-[2rem] md:mb-7 lg:text-[2.5rem] mb-10 font-bold text-xl">Що перевіряємо?</h3>
+        <div class="grid grid-cols-12 grid-rows-[auto_90px_auto] 2xl:grid-rows-none">
+          <div class="prose prose-xl md:prose-lg z-10 col-start-1 col-end-5 row-start-1 row-end-3 self-start text-balance 2xl:col-span-6 2xl:row-start-auto 2xl:row-end-auto lg:col-span-10 md:col-span-12 md:text-wrap">
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Mattis massa curabitur id vitae
+              asde est.
+            </p>
+          </div>
+          <div class="col-span-9 col-start-2 col-end-12 row-start-2 row-end-4 flex justify-center 2xl:col-span-12 2xl:row-start-auto 2xl:row-end-auto" id="car">
+            <div class="relative">
+              <img src="img/car-sheme.png" alt="turbocar" loading="lazy" class="mx-auto h-auto max-w-full" width="1014" height="634">
+              <span class="absolute flex lg:w-9 lg:h-7 2xl:w-[53px] 2xl:h-[45px] h-[60px] w-[70px] lg:-skew-x-6 -skew-x-12 lg:rounded-md rounded-lg bg-primary after:absolute after:left-1/2 after:top-1/2 after:h-8 lg:after:w-4 lg:after:h-3 after:w-9 2xl:after:h-6 2xl:after:w-7 after:-translate-x-1/2 after:-translate-y-1/2 after:-skew-x-6 lg:after:rounded-sm after:rounded-md after:bg-white after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 cursor-pointer lg:before:w-11 lg:before:h-9 2xl:before:w-[62px] 2xl:before:h-[54px] before:w-[82px] before:h-[72px] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:border-2 before:border-primary before:rounded-lg lg:after:opacity-100 lg:before:hidden sm:w-7 sm:h-5 sm:after:w-3 sm:after:h-2 sm:rounded sm:after:rounded-[1px] test left-[33.43%] top-[53.3%] marker" data-name="КПП" data-desc="Использование собственного алгоритма проверки КПП.">
+              </span>
+              <span class="absolute flex lg:w-9 lg:h-7 2xl:w-[53px] 2xl:h-[45px] h-[60px] w-[70px] lg:-skew-x-6 -skew-x-12 lg:rounded-md rounded-lg bg-primary after:absolute after:left-1/2 after:top-1/2 after:h-8 lg:after:w-4 lg:after:h-3 after:w-9 2xl:after:h-6 2xl:after:w-7 after:-translate-x-1/2 after:-translate-y-1/2 after:-skew-x-6 lg:after:rounded-sm after:rounded-md after:bg-white after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 cursor-pointer lg:before:w-11 lg:before:h-9 2xl:before:w-[62px] 2xl:before:h-[54px] before:w-[82px] before:h-[72px] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:border-2 before:border-primary before:rounded-lg lg:after:opacity-100 lg:before:hidden sm:w-7 sm:h-5 sm:after:w-3 sm:after:h-2 sm:rounded sm:after:rounded-[1px] left-[12.8%] top-[43.5%] marker" data-name="Двигатель" data-desc="Изучение состояния двигателя, выявление подтеков и шумов.">
+              </span>
+              <span class="absolute flex lg:w-9 lg:h-7 2xl:w-[53px] 2xl:h-[45px] h-[60px] w-[70px] lg:-skew-x-6 -skew-x-12 lg:rounded-md rounded-lg bg-primary after:absolute after:left-1/2 after:top-1/2 after:h-8 lg:after:w-4 lg:after:h-3 after:w-9 2xl:after:h-6 2xl:after:w-7 after:-translate-x-1/2 after:-translate-y-1/2 after:-skew-x-6 lg:after:rounded-sm after:rounded-md after:bg-white after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 cursor-pointer lg:before:w-11 lg:before:h-9 2xl:before:w-[62px] 2xl:before:h-[54px] before:w-[82px] before:h-[72px] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:border-2 before:border-primary before:rounded-lg lg:after:opacity-100 lg:before:hidden sm:w-7 sm:h-5 sm:after:w-3 sm:after:h-2 sm:rounded sm:after:rounded-[1px] left-[2.5%] top-[64%] marker" data-name="Турбина" data-desc="Оценку изношенности турбин – давление наддувов и отсутствие подтеков масла.">
+              </span>
+              <span class="absolute flex lg:w-9 lg:h-7 2xl:w-[53px] 2xl:h-[45px] h-[60px] w-[70px] lg:-skew-x-6 -skew-x-12 lg:rounded-md rounded-lg bg-primary after:absolute after:left-1/2 after:top-1/2 after:h-8 lg:after:w-4 lg:after:h-3 after:w-9 2xl:after:h-6 2xl:after:w-7 after:-translate-x-1/2 after:-translate-y-1/2 after:-skew-x-6 lg:after:rounded-sm after:rounded-md after:bg-white after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 cursor-pointer lg:before:w-11 lg:before:h-9 2xl:before:w-[62px] 2xl:before:h-[54px] before:w-[82px] before:h-[72px] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:border-2 before:border-primary before:rounded-lg lg:after:opacity-100 lg:before:hidden sm:w-7 sm:h-5 sm:after:w-3 sm:after:h-2 sm:rounded sm:after:rounded-[1px] left-[16.9%] top-[65.2%] marker" data-name="ДТП" data-desc="Осмотр на предмет участия в ДТП.">
+              </span>
+              <span class="absolute flex lg:w-9 lg:h-7 2xl:w-[53px] 2xl:h-[45px] h-[60px] w-[70px] lg:-skew-x-6 -skew-x-12 lg:rounded-md rounded-lg bg-primary after:absolute after:left-1/2 after:top-1/2 after:h-8 lg:after:w-4 lg:after:h-3 after:w-9 2xl:after:h-6 2xl:after:w-7 after:-translate-x-1/2 after:-translate-y-1/2 after:-skew-x-6 lg:after:rounded-sm after:rounded-md after:bg-white after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 cursor-pointer lg:before:w-11 lg:before:h-9 2xl:before:w-[62px] 2xl:before:h-[54px] before:w-[82px] before:h-[72px] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:border-2 before:border-primary before:rounded-lg lg:after:opacity-100 lg:before:hidden sm:w-7 sm:h-5 sm:after:w-3 sm:after:h-2 sm:rounded sm:after:rounded-[1px] left-[69%] top-[17.9%] marker" data-name="Cалон" data-desc="Осмотр салона. Позволяет понять отношение собственника к транспорту и выявить его использование в качестве такси.">
+              </span>
+              <span class="absolute flex lg:w-9 lg:h-7 2xl:w-[53px] 2xl:h-[45px] h-[60px] w-[70px] lg:-skew-x-6 -skew-x-12 lg:rounded-md rounded-lg bg-primary after:absolute after:left-1/2 after:top-1/2 after:h-8 lg:after:w-4 lg:after:h-3 after:w-9 2xl:after:h-6 2xl:after:w-7 after:-translate-x-1/2 after:-translate-y-1/2 after:-skew-x-6 lg:after:rounded-sm after:rounded-md after:bg-white after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 cursor-pointer lg:before:w-11 lg:before:h-9 2xl:before:w-[62px] 2xl:before:h-[54px] before:w-[82px] before:h-[72px] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:border-2 before:border-primary before:rounded-lg lg:after:opacity-100 lg:before:hidden sm:w-7 sm:h-5 sm:after:w-3 sm:after:h-2 sm:rounded sm:after:rounded-[1px] left-[82%] top-[35.8%] marker" data-name="Ходовая часть автомобиля" data-desc="Проверка амортизаторов, тормоза, дисков, антиблокировочной и антибуксовочной системы. Состояние и износ резины">
+              </span>
+              <span class="absolute flex lg:w-9 lg:h-7 2xl:w-[53px] 2xl:h-[45px] h-[60px] w-[70px] lg:-skew-x-6 -skew-x-12 lg:rounded-md rounded-lg bg-primary after:absolute after:left-1/2 after:top-1/2 after:h-8 lg:after:w-4 lg:after:h-3 after:w-9 2xl:after:h-6 2xl:after:w-7 after:-translate-x-1/2 after:-translate-y-1/2 after:-skew-x-6 lg:after:rounded-sm after:rounded-md after:bg-white after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 cursor-pointer lg:before:w-11 lg:before:h-9 2xl:before:w-[62px] 2xl:before:h-[54px] before:w-[82px] before:h-[72px] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:border-2 before:border-primary before:rounded-lg lg:after:opacity-100 lg:before:hidden sm:w-7 sm:h-5 sm:after:w-3 sm:after:h-2 sm:rounded sm:after:rounded-[1px] left-[59%] top-[52%] marker" data-name="Кузов" data-desc="Проверку состояния кузова. Выявляем наличие перекрашенных и рихтованных деталей.">
+              </span>
+              <span class="absolute flex lg:w-9 lg:h-7 2xl:w-[53px] 2xl:h-[45px] h-[60px] w-[70px] lg:-skew-x-6 -skew-x-12 lg:rounded-md rounded-lg bg-primary after:absolute after:left-1/2 after:top-1/2 after:h-8 lg:after:w-4 lg:after:h-3 after:w-9 2xl:after:h-6 2xl:after:w-7 after:-translate-x-1/2 after:-translate-y-1/2 after:-skew-x-6 lg:after:rounded-sm after:rounded-md after:bg-white after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 cursor-pointer lg:before:w-11 lg:before:h-9 2xl:before:w-[62px] 2xl:before:h-[54px] before:w-[82px] before:h-[72px] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:border-2 before:border-primary before:rounded-lg lg:after:opacity-100 lg:before:hidden sm:w-7 sm:h-5 sm:after:w-3 sm:after:h-2 sm:rounded sm:after:rounded-[1px] left-[35.9%] top-[24%] marker" data-name="Безопасность" data-desc="Проверку целостности подушек безопасности.">
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h3 class="sm:text-md md:text-[2rem] md:mb-7 lg:text-[2.5rem] mb-10 font-bold text-xl">Як ми робимо</h3>
+        <div class="prose prose-xl md:prose-lg mb-12 max-w-[32rem] text-balance md:max-w-full md:text-wrap">
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Mattis massa curabitur id vitae asde
+            est.
+          </p>
+        </div>
+        <!-- Slider main container -->
+        <div class="process-carousel-wrapper">
+          <div class="swiper process-carousel">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide process-carousel__item">
+                <a href="https://youtu.be/NMThdHhrLoM?si&#x3D;HWKQwJ_06tQskLQ3" class="group relative flex aspect-[2/1] max-w-[36.25rem] -skew-x-3 overflow-hidden rounded-xl border-8 border-white bg-black shadow-[0px_10px_10px_rgba(0,0,0,0.16)] before:absolute before:left-0 before:top-0 before:z-10 before:block before:h-full before:w-full before:bg-black before:opacity-50 xl:shadow-[0px_3px_3px_rgba(0,0,0,0.16)] w-full" data-process-carousel="">
+                  <img src="img/main.jpg" alt="turbocar" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" width="1800" height="960">
+                  <svg class="icon icon-play absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 group-hover:scale-110 transition-transform duration-500">
+                    <use xlink:href="#play">
+                    </use>
+                  </svg>
+                </a>
+              </div>
+              <div class="swiper-slide process-carousel__item">
+                <a href="https://youtu.be/NMThdHhrLoM?si&#x3D;HWKQwJ_06tQskLQ3" class="group relative flex aspect-[2/1] max-w-[36.25rem] -skew-x-3 overflow-hidden rounded-xl border-8 border-white bg-black shadow-[0px_10px_10px_rgba(0,0,0,0.16)] before:absolute before:left-0 before:top-0 before:z-10 before:block before:h-full before:w-full before:bg-black before:opacity-50 xl:shadow-[0px_3px_3px_rgba(0,0,0,0.16)] w-full" data-process-carousel="">
+                  <img src="img/main.jpg" alt="turbocar" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" width="1800" height="960">
+                  <svg class="icon icon-play absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 group-hover:scale-110 transition-transform duration-500">
+                    <use xlink:href="#play">
+                    </use>
+                  </svg>
+                </a>
+              </div>
+              <div class="swiper-slide process-carousel__item">
+                <a href="https://youtu.be/NMThdHhrLoM?si&#x3D;HWKQwJ_06tQskLQ3" class="group relative flex aspect-[2/1] max-w-[36.25rem] -skew-x-3 overflow-hidden rounded-xl border-8 border-white bg-black shadow-[0px_10px_10px_rgba(0,0,0,0.16)] before:absolute before:left-0 before:top-0 before:z-10 before:block before:h-full before:w-full before:bg-black before:opacity-50 xl:shadow-[0px_3px_3px_rgba(0,0,0,0.16)] w-full" data-process-carousel="">
+                  <img src="img/main.jpg" alt="turbocar" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" width="1800" height="960">
+                  <svg class="icon icon-play absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 group-hover:scale-110 transition-transform duration-500">
+                    <use xlink:href="#play">
+                    </use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+          <!-- If we need navigation buttons -->
+          <div class="process-carousel-button process-carousel-button_prev">
+            <svg class="icon icon-prev-arrow">
+              <use xlink:href="#prev-arrow">
+              </use>
+            </svg>
+          </div>
+          <div class="process-carousel-button process-carousel-button_next">
+            <svg class="icon icon-prev-arrow">
+              <use xlink:href="#prev-arrow">
+              </use>
+            </svg>
+          </div>
+          <div class="process-carousel-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <section class="section section_fill section_fill-primary">
+      <div class="container">
+        <div class="grid grid-cols-12 gap-column">
+          <div class="col-span-10 col-start-2 xl:col-span-12">
+            <h3 class="sm:text-md md:text-[2rem] md:mb-7 lg:text-[2.5rem] mb-10 font-bold text-xl text-white">Lorem ipsum dolor sit ammet deum</h3>
+            <div class="prose prose-xl md:prose-lg mb-14 max-w-[680px] text-balance md:mb-10 md:text-wrap prose-white">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Mattis massa curabitur id
+                viverra massa vitae est. Consectetur rhoncus eu adipiscing et molestie
+                tortor tellus scelerisque ut.
+              </p>
+            </div>
+            <form class="form flex items-center gap-column lg:flex-col" autocomplete="off">
+              <div class="w-full -skew-x-12 rounded-lg border-4 border-white lg:max-w-[26.25rem]">
+                <input type="tel" name="phone" class="h-[calc(4.5rem_-_8px)] w-full skew-x-12 bg-transparent px-[clamp(1.5rem,3.6rem,9.35%)] text-md font-medium text-primary-dark 2xl:h-[calc(4rem_-_8px)] lg:h-[calc(3.5rem_-_8px)] lg:px-4 lg:text-base" required placeholder="+38 (999)-999-99-99">
+              </div>
+              <button class="button w-[26.25rem] shrink-0 shadow-main button_white">
+                <span class="skew-x-12">Залишити заявку</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container" id="review">
+        <h3 class="sm:text-md md:text-[2rem] md:mb-7 lg:text-[2.5rem] mb-10 font-bold text-xl">Відгуки наших клієнтів</h3>
+        <!-- Slider main container -->
+        <div class="review-carousel-wrapper">
+          <div class="swiper review-carousel">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide review-carousel__item">
+                <a href="img/mazda-1.jpg" class="group relative flex aspect-[2/1] max-w-[36.25rem] -skew-x-3 overflow-hidden rounded-xl border-8 border-white bg-black shadow-[0px_10px_10px_rgba(0,0,0,0.16)] before:absolute before:left-0 before:top-0 before:z-10 before:block before:h-full before:w-full before:bg-black before:opacity-50 xl:shadow-[0px_3px_3px_rgba(0,0,0,0.16)] w-full" data-fancybox="car-mazda" data-caption="Mazda 6">
+                  <img src="img/mazda-1.jpg" alt="turbocar" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" width="940" height="549">
+                  <span class="absolute left-1/2 top-1/2 z-20 block w-full -translate-x-1/2 -translate-y-1/2 skew-x-3 px-4 text-center text-lg font-bold text-white sm:text-base">
+                    Mazda 6
+                  </span>
+                </a>
+              </div>
+              <div class="swiper-slide review-carousel__item">
+                <a href="img/Jeep-1.jpg" class="group relative flex aspect-[2/1] max-w-[36.25rem] -skew-x-3 overflow-hidden rounded-xl border-8 border-white bg-black shadow-[0px_10px_10px_rgba(0,0,0,0.16)] before:absolute before:left-0 before:top-0 before:z-10 before:block before:h-full before:w-full before:bg-black before:opacity-50 xl:shadow-[0px_3px_3px_rgba(0,0,0,0.16)] w-full" data-fancybox="car-Jeep" data-caption="Jeep Compass e-Hybrid">
+                  <img src="img/Jeep-1.jpg" alt="turbocar" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" width="940" height="627">
+                  <span class="absolute left-1/2 top-1/2 z-20 block w-full -translate-x-1/2 -translate-y-1/2 skew-x-3 px-4 text-center text-lg font-bold text-white sm:text-base">
+                    Jeep Compass <br> e-Hybrid
+                  </span>
+                </a>
+              </div>
+              <div class="swiper-slide review-carousel__item">
+                <a href="img/Hyundai-1.jpg" class="group relative flex aspect-[2/1] max-w-[36.25rem] -skew-x-3 overflow-hidden rounded-xl border-8 border-white bg-black shadow-[0px_10px_10px_rgba(0,0,0,0.16)] before:absolute before:left-0 before:top-0 before:z-10 before:block before:h-full before:w-full before:bg-black before:opacity-50 xl:shadow-[0px_3px_3px_rgba(0,0,0,0.16)] w-full" data-fancybox="car-Hyundai" data-caption="Hyundai Palisade">
+                  <img src="img/Hyundai-1.jpg" alt="turbocar" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" width="940" height="627">
+                  <span class="absolute left-1/2 top-1/2 z-20 block w-full -translate-x-1/2 -translate-y-1/2 skew-x-3 px-4 text-center text-lg font-bold text-white sm:text-base">
+                    Hyundai Palisade
+                  </span>
+                </a>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+          <!-- If we need navigation buttons -->
+          <div class="review-carousel-button review-carousel-button_prev">
+            <svg class="icon icon-prev-arrow">
+              <use xlink:href="#prev-arrow">
+              </use>
+            </svg>
+          </div>
+          <div class="review-carousel-button review-carousel-button_next">
+            <svg class="icon icon-prev-arrow">
+              <use xlink:href="#prev-arrow">
+              </use>
+            </svg>
+          </div>
+          <div class="review-carousel-pagination"></div>
+        </div>
+        <div class="none">
+          <a href="img/mazda-2.jpg" data-fancybox="car-mazda" data-caption="Mazda 6"></a>
+          <a href="https://youtu.be/fYzZpAZ6Osk?si=9IswKkK0i61fovXK" data-fancybox="car-mazda" data-caption="Mazda 6"></a>
+          <a href="img/mazda-3.jpg" data-fancybox="car-mazda" data-caption="Mazda 6"></a>
+          <a href="img/mazda-4.jpg" data-fancybox="car-mazda" data-caption="Mazda 6"></a>
+          <a href="img/mazda-5.jpg" data-fancybox="car-mazda" data-caption="Mazda 6"></a>
+          <a href="img/mazda-6.jpg" data-fancybox="car-mazda" data-caption="Mazda 6"></a>
+          <a href="img/Jeep-2.jpg" data-fancybox="car-Jeep" data-caption="Jeep Compass e-Hybrid"></a>
+          <a href="img/Jeep-3.jpg" data-fancybox="car-Jeep" data-caption="Jeep Compass e-Hybrid"></a>
+          <a href="img/Jeep-4.jpg" data-fancybox="car-Jeep" data-caption="Jeep Compass e-Hybrid"></a>
+          <a href="img/Jeep-5.jpg" data-fancybox="car-Jeep" data-caption="Jeep Compass e-Hybrid"></a>
+          <a href="https://youtu.be/jeWeIdZ7u5w?si=P5F6UcQOQnghKaYM" data-fancybox="car-Jeep" data-caption="Jeep Compass e-Hybrid"></a>
+          <a href="img/Hyundai-2.jpg" data-fancybox="car-Hyundai" data-caption="Hyundai Palisade"></a>
+          <a href="img/Hyundai-3.jpg" data-fancybox="car-Hyundai" data-caption="Hyundai Palisade"></a>
+          <a href="img/Hyundai-4.jpg" data-fancybox="car-Hyundai" data-caption="Hyundai Palisade"></a>
+          <a href="https://youtu.be/qa5OAbnplEU?si=bHpIn72EsDAbPlUk" data-fancybox="car-Hyundai" data-caption="Hyundai Palisade"></a>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container" id="faq">
+        <h3 class="sm:text-md md:text-[2rem] md:mb-7 lg:text-[2.5rem] mb-10 font-bold text-xl">Питання / Відповідь</h3>
+        <div class="grid grid-cols-12 gap-column">
+          <img src="img/faq.jpg" alt="turbocar" class="col-span-6 h-auto max-w-full self-center lg:order-1 lg:col-span-12 lg:hidden" loading="lazy" width="600" height="544">
+          <div class="col-span-6 lg:col-span-12">
+            <div class="toggle-item group border-b-2 border-[#BCC2D0]">
+              <div class="toggle-item__label flex cursor-pointer items-center gap-column py-4 md:gap-x-2">
+                <p class="grow font-bold sm:text-sm">Lorem ipsum dolor sit amet consectetur. Mattis massa curabitur id viverra massa vitae est?</p>
+                <span class="relative block h-[50px] w-[50px] shrink-0 rounded-[50%] border-2 border-primary bg-primary transition-colors duration-500 before:absolute before:left-1/2 before:top-1/2 before:block before:h-1 before:w-5 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:bg-white before:transition-transform before:duration-500 after:absolute after:left-1/2 after:top-1/2 after:block after:h-1 after:w-5 after:-translate-x-1/2 after:-translate-y-1/2 after:bg-white group-[.toggle-item\_active]:bg-white group-[.toggle-item\_active]:before:rotate-0 group-[.toggle-item\_active]:before:bg-primary group-[.toggle-item\_active]:after:bg-primary md:h-9 md:w-9"></span>
+              </div>
+              <div class="toggle-item__desc h-0 overflow-hidden">
+                <div class="prose max-w-[calc(100%-60px)] pb-4 md:max-w-full">
+                  <p>Lorem ipsum dolor sit amet consectetur. Mattis massa curabitur id viverra massa vitae est. Consectetur rhoncus eu adipiscing et molestie tortor tellus scelerisque ut.</p>
+                </div>
+              </div>
+            </div>
+            <div class="toggle-item group border-b-2 border-[#BCC2D0]">
+              <div class="toggle-item__label flex cursor-pointer items-center gap-column py-4 md:gap-x-2">
+                <p class="grow font-bold sm:text-sm">Lorem ipsum dolor sit amet curabitur id viverra massa vitae est?</p>
+                <span class="relative block h-[50px] w-[50px] shrink-0 rounded-[50%] border-2 border-primary bg-primary transition-colors duration-500 before:absolute before:left-1/2 before:top-1/2 before:block before:h-1 before:w-5 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:bg-white before:transition-transform before:duration-500 after:absolute after:left-1/2 after:top-1/2 after:block after:h-1 after:w-5 after:-translate-x-1/2 after:-translate-y-1/2 after:bg-white group-[.toggle-item\_active]:bg-white group-[.toggle-item\_active]:before:rotate-0 group-[.toggle-item\_active]:before:bg-primary group-[.toggle-item\_active]:after:bg-primary md:h-9 md:w-9"></span>
+              </div>
+              <div class="toggle-item__desc h-0 overflow-hidden">
+                <div class="prose max-w-[calc(100%-60px)] pb-4 md:max-w-full">
+                  <p>Lorem ipsum dolor sit amet consectetur. Mattis massa curabitur id viverra massa vitae est. Consectetur rhoncus eu adipiscing et molestie tortor tellus scelerisque ut.</p>
+                </div>
+              </div>
+            </div>
+            <div class="toggle-item group border-b-2 border-[#BCC2D0]">
+              <div class="toggle-item__label flex cursor-pointer items-center gap-column py-4 md:gap-x-2">
+                <p class="grow font-bold sm:text-sm">Сonsectetur Mattis massa curabitur id viverra massa vitae est?</p>
+                <span class="relative block h-[50px] w-[50px] shrink-0 rounded-[50%] border-2 border-primary bg-primary transition-colors duration-500 before:absolute before:left-1/2 before:top-1/2 before:block before:h-1 before:w-5 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:bg-white before:transition-transform before:duration-500 after:absolute after:left-1/2 after:top-1/2 after:block after:h-1 after:w-5 after:-translate-x-1/2 after:-translate-y-1/2 after:bg-white group-[.toggle-item\_active]:bg-white group-[.toggle-item\_active]:before:rotate-0 group-[.toggle-item\_active]:before:bg-primary group-[.toggle-item\_active]:after:bg-primary md:h-9 md:w-9"></span>
+              </div>
+              <div class="toggle-item__desc h-0 overflow-hidden">
+                <div class="prose max-w-[calc(100%-60px)] pb-4 md:max-w-full">
+                  <p>Lorem ipsum dolor sit amet consectetur. Mattis massa curabitur id viverra massa vitae est. Consectetur rhoncus eu adipiscing et molestie tortor tellus scelerisque ut.</p>
+                </div>
+              </div>
+            </div>
+            <div class="toggle-item group border-b-2 border-[#BCC2D0]">
+              <div class="toggle-item__label flex cursor-pointer items-center gap-column py-4 md:gap-x-2">
+                <p class="grow font-bold sm:text-sm">Lorem ipsum dolor sit massa vitae est?</p>
+                <span class="relative block h-[50px] w-[50px] shrink-0 rounded-[50%] border-2 border-primary bg-primary transition-colors duration-500 before:absolute before:left-1/2 before:top-1/2 before:block before:h-1 before:w-5 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:bg-white before:transition-transform before:duration-500 after:absolute after:left-1/2 after:top-1/2 after:block after:h-1 after:w-5 after:-translate-x-1/2 after:-translate-y-1/2 after:bg-white group-[.toggle-item\_active]:bg-white group-[.toggle-item\_active]:before:rotate-0 group-[.toggle-item\_active]:before:bg-primary group-[.toggle-item\_active]:after:bg-primary md:h-9 md:w-9"></span>
+              </div>
+              <div class="toggle-item__desc h-0 overflow-hidden">
+                <div class="prose max-w-[calc(100%-60px)] pb-4 md:max-w-full">
+                  <p>Lorem ipsum dolor sit amet consectetur. Mattis massa curabitur id viverra massa vitae est. Consectetur rhoncus eu adipiscing et molestie tortor tellus scelerisque ut.</p>
+                </div>
+              </div>
+            </div>
+            <div class="toggle-item group border-b-2 border-[#BCC2D0]">
+              <div class="toggle-item__label flex cursor-pointer items-center gap-column py-4 md:gap-x-2">
+                <p class="grow font-bold sm:text-sm">Lorem ipsum dolor sit amet consectetur?</p>
+                <span class="relative block h-[50px] w-[50px] shrink-0 rounded-[50%] border-2 border-primary bg-primary transition-colors duration-500 before:absolute before:left-1/2 before:top-1/2 before:block before:h-1 before:w-5 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:bg-white before:transition-transform before:duration-500 after:absolute after:left-1/2 after:top-1/2 after:block after:h-1 after:w-5 after:-translate-x-1/2 after:-translate-y-1/2 after:bg-white group-[.toggle-item\_active]:bg-white group-[.toggle-item\_active]:before:rotate-0 group-[.toggle-item\_active]:before:bg-primary group-[.toggle-item\_active]:after:bg-primary md:h-9 md:w-9"></span>
+              </div>
+              <div class="toggle-item__desc h-0 overflow-hidden">
+                <div class="prose max-w-[calc(100%-60px)] pb-4 md:max-w-full">
+                  <p>Lorem ipsum dolor sit amet consectetur. Mattis massa curabitur id viverra massa vitae est. Consectetur rhoncus eu adipiscing et molestie tortor tellus scelerisque ut.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section_indent-only-top section section_fill section_fill-black">
+      <div class="container">
+        <div class="grid grid-cols-2 gap-12">
+          <div class="col-span-1 self-center lg:col-span-2">
+            <h3 class="sm:text-md md:text-[2rem] md:mb-7 lg:text-[2.5rem] mb-10 font-bold text-xl text-white">Контакти</h3>
+            <div class="prose prose-xl md:prose-lg max-w-[484px] mb-4 prose-white">
+              <p>Профессиональная помощь при покупке или продаже автомобиля</p>
+              <p>
+                <a href="tel:+38(099)-999-90-90">+38(099)-999-90-90</a> <br>
+                <a href="mailto:testsite@info.com">testsite@info.com</a>
+              </p>
+            </div>
+            <div class="flex gap-x-4 section_indent-only-top">
+              <a href="#" target="_blank" class="block invert transition-transform duration-500 hover:scale-110">
+                <svg class="icon icon-inst section_indent-only-top">
+                  <use xlink:href="#inst">
+                  </use>
+                </svg>
+              </a>
+              <a href="#" target="_blank" class="block invert transition-transform duration-500 hover:scale-110">
+                <svg class="icon icon-yt section_indent-only-top">
+                  <use xlink:href="#yt">
+                  </use>
+                </svg>
+              </a>
+              <a href="#" target="_blank" class="block invert transition-transform duration-500 hover:scale-110">
+                <svg class="icon icon-fb section_indent-only-top">
+                  <use xlink:href="#fb">
+                  </use>
+                </svg>
+              </a>
+            </div>
+            <form class="form flex flex-col gap-9 max-w-[620px] mx-auto mt-10 lg:mt-12" autocomplete="off">
+              <div class="w-full -skew-x-12 rounded-lg border-4 border-white placeholder-black">
+                <input type="text" name="name" class="h-[calc(4.5rem_-_8px)] w-full skew-x-12 bg-transparent px-[clamp(1.5rem,3.6rem,9.35%)] text-md font-medium text-primary-dark 2xl:h-[calc(4rem_-_8px)] lg:h-[calc(3.5rem_-_8px)] lg:px-4 lg:text-base" required placeholder="ПІБ">
+              </div>
+              <div class="w-full -skew-x-12 rounded-lg border-4 border-white placeholder-black">
+                <input type="tel" name="phone" class="h-[calc(4.5rem_-_8px)] w-full skew-x-12 bg-transparent px-[clamp(1.5rem,3.6rem,9.35%)] text-md font-medium text-primary-dark 2xl:h-[calc(4rem_-_8px)] lg:h-[calc(3.5rem_-_8px)] lg:px-4 lg:text-base" required placeholder="+38 (999)-999-99-99">
+              </div>
+              <button class="button lg:mx-auto w-[26.25rem] shrink-0 drop-shadow-main button_white">
+                <span class="skew-x-12">Залишити заявку</span>
+              </button>
+            </form>
+          </div>
+          <div class="col-span-1 lg:col-span-2">
+            <div class="flex h-full min-h-[800px] w-full rounded-2xl lg:aspect-video lg:min-h-[350px]" id="map" data-lat="42.70703760340049" data-lng="23.3102718835206">
+              <div class="h-full w-full animate-pulse rounded-lg bg-white p-4 shadow-md"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="footer flex items-center py-6">
+    <div class="container">
+      <div class="mb-6 grid grid-cols-12 items-center gap-column">
+        <a href="#" class="block logo col-span-1 -mr-[calc(theme(gap.column)/2)] xl:col-span-3">
+          <img src="img/logo.png" alt="turbocar">
+        </a>
+        <nav class="nav flex items-center justify-center col-span-7 gap-x-6 xl:hidden">
+          <a href="#about" class="nav__item text-sm font-normal transition-[color] duration-500 hover:text-primary">Про нас</a>
+          <a href="#services" class="nav__item text-sm font-normal transition-[color] duration-500 hover:text-primary">Послуги</a>
+          <a href="#check" class="nav__item text-sm font-normal transition-[color] duration-500 hover:text-primary">Що перевіряємо</a>
+          <a href="#review" class="nav__item text-sm font-normal transition-[color] duration-500 hover:text-primary">Відгуки</a>
+          <a href="#faq" class="nav__item text-sm font-normal transition-[color] duration-500 hover:text-primary">FAQ</a>
+        </nav>
+        <div class="col-span-4 flex items-center justify-between gap-x-column xl:col-span-9 xl:justify-end">
+          <div class="flex flex-col gap-y-2 xl:gap-y-1">
+            <a href="tel:+380999999999" class="text-[1.125rem] text-primary font-bold 2xl:text-sm xl:text-[0.85rem]">+380 (99) 999 99 99</a>
+            <a href="mailto:turbocar@gmail.com" class="text-[0.75rem]">turbocar@gmail.com</a>
+          </div> <a href="#" class="hover:bg-primary flex items-center justify-center self-center rounded-md bg-[#D9D9D9] px-2 py-1 text-center text-sm transition-colors duration-500">En</a>
+          <div class="flex gap-x-4 xl:hidden">
+            <a href="#" target="_blank" class="block transition-transform duration-500 hover:scale-110">
+              <svg class="icon icon-inst xl:hidden">
+                <use xlink:href="#inst">
+                </use>
+              </svg>
+            </a>
+            <a href="#" target="_blank" class="block transition-transform duration-500 hover:scale-110">
+              <svg class="icon icon-yt xl:hidden">
+                <use xlink:href="#yt">
+                </use>
+              </svg>
+            </a>
+            <a href="#" target="_blank" class="block transition-transform duration-500 hover:scale-110">
+              <svg class="icon icon-fb xl:hidden">
+                <use xlink:href="#fb">
+                </use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-12 gap-column sm:gap-1">
+        <div class="col-span-6 sm:order-1 sm:col-span-12 sm:text-center">
+          <p class="text-sm sm:text-[0.8rem]">Copyright 2023</p>
+        </div>
+        <div class="col-span-6 sm:col-span-12">
+          <nav class="flex flex-wrap items-center justify-end gap-column sm:justify-center">
+            <a href="#" class="text-sm transition-colors duration-500 hover:text-primary sm:text-[0.8rem]">Privacy Policy</a>
+            <a href="#" class="text-sm transition-colors duration-500 hover:text-primary sm:text-[0.8rem]">Privacy Policy</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+<div id="submit-modal-success" data-fancybox-close="" class="hidden h-full w-full">
+  <div class="flex h-full w-full items-center justify-center">
+    <div class="prose prose-2xl text-center uppercase">
+      <p><strong>Спасибо!</strong></p>
+      <p><strong>Наши менеджеры свяжутся с вами в ближайшее время!</strong></p>
+    </div>
+  </div>
+</div>
+
+<div id="submit-modal-error" data-fancybox-close="" class="hidden h-full w-full">
+  <div class="flex h-full w-full items-center justify-center">
+    <div class="prose prose-2xl text-center uppercase">
+      <p>
+        <strong>Ошибка!</strong>
+      </p>
+      <p><strong>Попробуйте еще раз!</strong></p>
+    </div>
+  </div>
+</div>
+<div id="modal-form" class="hidden">
+  <div class="w-full max-w-[460px] rounded-xl bg-primary px-12 py-16 drop-shadow-main sm:px-6 sm:py-12">
+    <form class="form flex flex-col gap-9" autocomplete="off">
+      <div class="w-full -skew-x-12 rounded-lg border-4 border-white placeholder-black">
+        <input type="text" name="name" class="h-[calc(4.5rem_-_8px)] w-full skew-x-12 bg-transparent px-[clamp(1.5rem,3.6rem,9.35%)] text-md font-medium text-primary-dark 2xl:h-[calc(4rem_-_8px)] lg:h-[calc(3.5rem_-_8px)] lg:px-4 lg:text-base" required placeholder="ПІБ">
+      </div>
+      <div class="w-full -skew-x-12 rounded-lg border-4 border-white placeholder-black">
+        <input type="tel" name="phone" class="h-[calc(4.5rem_-_8px)] w-full skew-x-12 bg-transparent px-[clamp(1.5rem,3.6rem,9.35%)] text-md font-medium text-primary-dark 2xl:h-[calc(4rem_-_8px)] lg:h-[calc(3.5rem_-_8px)] lg:px-4 lg:text-base" required placeholder="+38 (999)-999-99-99">
+      </div>
+      <button id="modal-form" class="button lg:mx-auto w-[26.25rem] shrink-0 drop-shadow-main button_white">
+        <span class="skew-x-12">Залишити заявку</span>
+      </button>
+    </form>
+  </div>
+</div>
+<script defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmz5kpsX2ZwwqjgWC4RKuuMGl9sQ2a8XI">
+</script>
+<script defer="defer" src="js/libs.js"></script>
+<script defer="defer" src="js/common.js"></script>
